@@ -6,7 +6,7 @@ jobs:
     steps:
     - checkout
     - run: |
-        gradle --info car
+        gradle --no-daemon --stacktrace --info car
         ls -lh
         ls -lh build
         ls -lh DisplayObjects/mobile/build
