@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    docker:
+    - image: circleci/openjdk:8-jdk
+    steps:
+    - checkout
+    - run: |
+        gradle --info car
+        ls -lh
+        ls -lh build
+        ls -lh DisplayObjects/mobile/build
+workflows:
+  version: 2
+  all:
+    jobs:
+    - build

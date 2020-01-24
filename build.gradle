@@ -7,26 +7,25 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
-		classpath 'com.convertigo:gradle-plugin:7.6.4-SNAPSHOT'
+		classpath 'com.convertigo:gradle-plugin:7.7.1-SNAPSHOT'
 	}
 }
 
 apply plugin: 'convertigo'
 
-/** Convertigo Gradle Plugin DSL **
+/** Convertigo Gradle Plugin DSL **/
 
 // the 'load' task load and migrate the project to the current plugin version
 load {
 	// change the 'version' property of the project at loading
 	// can also be configured with a -Pconvertigo.load.projectVersion as Gradle parameter
-	projectVersion 'x.y.z-release'
+	// projectVersion 'x.y.z-release'
 }
 
 // the 'car' task allow to build a <projectName>.car inside the <projectdir>/build folder
 car {
+	dependsOn(compileMobileBuilder)
 	// configure the destination of the <projectName>.car file
 	// can also be configured with a -Pconvertigo.car.destinationDir as Gradle parameter
-	destinationDir '/deploymentPath/projects'
+	// destinationDir '/deploymentPath/projects'
 }
-
-**/
