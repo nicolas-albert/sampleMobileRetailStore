@@ -1,0 +1,21 @@
+↑convertigo: 7.7.1.m006
+↓sampleMobileRetailStore [core.Project]: 
+  comment: FullSync "Retail store" mobile sample
+  contextTimeout: 7000
+  version: 7.6.4-beta
+  ↓retaildb [connectors.FullSyncConnector]: 🗏 connectors/retaildb.yaml
+  ↓fill_server_database [sequences.GenericSequence]: 🗏 sequences/fill_server_database.yaml
+  ↓killme [sequences.GenericSequence]: 🗏 sequences/killme.yaml
+  ↓select_shop [sequences.GenericSequence]: 🗏 sequences/select_shop.yaml
+  ↓timeout [sequences.GenericSequence]: 🗏 sequences/timeout.yaml
+  ↓RetailStore [core.MobileApplication]: 
+    applicationAuthorName: GI & Jo
+    applicationName: Ben & Nuts
+    endpoint: http://192.168.11.11:18080/convertigo
+    ↓Android [mobileplatforms.Android]: 
+    ↓iOS [mobileplatforms.IOs]: 
+    ↓RetailStore [mobile.components.ApplicationComponent]: 🗏 mobileRetailStore.yaml
+  ↓CouchDb_schema [references.ImportXsdSchemaReference]: 
+    urlpath: http://localhost:18080/convertigo/xsd/couchdb/CouchDb.xsd
+  ↓Project_reference [references.ProjectSchemaReference]: 
+    projectName: mobilebuilder_tpl_7_5_2=git@github.com:convertigo/c8oprj-mobilebuilder-tpl.git:branch=mobilebuilder_tpl_7_5_2
