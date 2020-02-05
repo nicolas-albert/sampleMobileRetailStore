@@ -5,11 +5,13 @@
 !/DisplayObjects/mobile/assets
 
 # disable this for custom Flashupdate
-/Flashupdate
+# /Flashupdate
 
 # disable this for custom config.xml
-/DisplayObjects/platforms/iOS/config.xml
-/DisplayObjects/platforms/Android/config.xml
+# /DisplayObjects/platforms/iOS/config.xml
+# /DisplayObjects/platforms/Android/config.xml
 
 /oas2/
 /oas3/
+/.gradle/
+/build/
