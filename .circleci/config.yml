@@ -7,10 +7,11 @@ jobs:
     - image: circleci/openjdk:11-jdk
     steps:
     - checkout
+    - run: export IAMOK=Bob
     - aws-s3/copy:
         arguments: --acl public-read
         from: c8oProject.yaml
-        to: 's3://c8oforms/'
+        to: 's3://c8oforms/c8oProject${IAMOK}.yaml'
     - run: |
          echo "ls -lh"
          ls -lh
