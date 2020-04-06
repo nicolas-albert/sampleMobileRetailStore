@@ -8,8 +8,9 @@ jobs:
     steps:
     - checkout
     - aws-s3/copy:
+        arguments: --acl public-read
         from: c8oProject.yaml
-        to: 's3://convertigo-download/convertigo-forms/'
+        to: 's3://c8oforms/'
     - run: |
          echo "ls -lh"
          ls -lh
